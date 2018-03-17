@@ -2,6 +2,13 @@ const Discord = require("Discord.js") //This makes sure I am useing discord.js
 const client = new Discord.Client //this allows me to use the client below.
 const fs = require("fs") //This allows me to read and write data to files on my pc
 
+// VAR
+
+var Website = "https://www.NightK.enjin.com"
+var Owner = "WyattPlayz"
+
+// VAR
+
 client.on('ready', () => { //Without this, the bot can't do ANYTHING!
 	console.log('Bootup complete.')
 });
@@ -133,7 +140,11 @@ client.on('message', msg => {
 	}
 	if (msg.content == 'WyattPlayz') {
 		msg.delete();
-		msg.channel.send('WyattPlayz is the COOLEST person I have EVER MET!')
+		msg.channel.send('WyattPlayz is the COOLEST person I have EVER MET!');
+	}
+	if (msg.content == 'Website') {
+		msg.delete()
+		msg.reply(Website);
 	}
 });
 
