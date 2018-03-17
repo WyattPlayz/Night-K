@@ -100,20 +100,6 @@ client.on('message', msg => {
 		msg.delete();
 		msg.channel.send(`Well, Its nice to meet you ${player}`)
 	}
-	if (msg.content == '-moneysetup') {
-		let MoneyTemplate = 0
-		let userID = msg.mentions.members.first();
-		fs.writeFile(`${userID}.txt`, `${MoneyTemplate}`, (err) => {  
-			// throws an error, you could also catch it here
-			if (err) throw err;
-		});
-	}
-	if (msg.content == '!money') {
-		let UserID = msg.author.id
-		var player = `C:\Users\Wyatt Standard\Desktop\Night K\Users\${UserID}`;
-		let balance = fs.readFileSync(player).toString().split("/n");
-		msg.reply(`You Have ${balance} Moneyz!`);
-	}
 	if (msg.content == 'no escape') {
 		msg.delete();
 		msg.channel.send('Hiding is pointless, there is no escape!')
@@ -145,6 +131,10 @@ client.on('message', msg => {
 	if (msg.content == 'Website') {
 		msg.delete()
 		msg.reply(Website);
+	}
+	if (msg.content == 'no') {
+		let Player = msg.author
+		msg.channel.send(`I think ${Player} Ment to say Yes`)
 	}
 });
 
